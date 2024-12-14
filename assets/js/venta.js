@@ -34,7 +34,7 @@ const propiedades_venta = [
 	},
 	{
 		nombre: 'Estudio moderno en el centro de la ciudad',
-		src: '',
+		src: 'assets/img/studio.jpg',
 		descripcion: 'Un estudio recientemente renovado, perfecto para una sola persona o pareja, cerca de restaurantes y transporte público.',
 		ubicacion: 'Calle Principal 789, Centro, MX 11223',
 		habitaciones: 1,

@@ -34,7 +34,7 @@ const propiedades_alquiler = [
 	},
 	{
 		nombre: 'Casa luminosa con jardín en zona tranquila',
-		src: '',
+		src: 'assets/img/house-garden.jpg',
 		descripcion: 'Una casa espaciosa, llena de luz natural, con un amplio jardín ideal para reuniones y tiempo al aire libre.',
 		ubicacion: 'Avenida Del Parque 32, Colonia Las Flores, MX 22045',
 		habitaciones: 4,
