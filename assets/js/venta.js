@@ -1,11 +1,12 @@
-const propiedades_venta = [
+const propertiesVenta = [
 	{
 		nombre: 'Apartamento de lujo en zona exclusiva',
 		src: 'https://fotos.perfil.com/2018/09/21/trim/950/534/nueva-york-09212018-366965.jpg',
 		descripcion: 'Este apartamento de lujo está ubicado en una exclusiva zona residencial',
 		ubicacion: '123 Luxury Lane, Prestige Suburb, CA 45678',
 		habitaciones: 4,
-		costo: 5.000,
+		bano: 4,
+		costo: '5.000',
 		smoke: false,
 		pets: false
 
@@ -16,7 +17,8 @@ const propiedades_venta = [
 		descripcion: 'Este apartamento acogedor está situado en lo alto de una montaña con impresionantes vistas',
 		ubicacion: '789 Mountain Road, Summit Peaks, CA 23456',
 		habitaciones: 2,
-		costo: 1.200,
+		bano: 1,
+		costo: '1.200',
 		smoke: true,
 		pets: true
 
@@ -27,7 +29,8 @@ const propiedades_venta = [
 		descripcion: 'Este penthouse de lujo ofrece una terraza panorámica con vistas espectaculares',
 		ubicacion: '567 Skyline Avenue, Skyview City, CA 56789',
 		habitaciones: 3,
-		costo: 4.500,
+		bano: 3,
+		costo: '4.500',
 		smoke: false,
 		pets: true
 
@@ -38,9 +41,63 @@ const propiedades_venta = [
 		descripcion: 'Un estudio recientemente renovado, perfecto para una sola persona o pareja, cerca de restaurantes y transporte público.',
 		ubicacion: 'Calle Principal 789, Centro, MX 11223',
 		habitaciones: 1,
-		costo: 800,
+		bano: 2,
+		costo: '800',
 		smoke: false,
 		pets: false
 
 	}
 ]
+
+// Propiedades Venta
+const containerSale = document.getElementById('properties-sale');
+let containerContent = ""
+
+for (const property of propertiesVenta) {
+	let smoke = ""
+	if (property.smoke) {
+		smoke = "<i class='fas fa-smoking'></i> Permitido fumar"
+	} else {
+		smoke = "<i class='fas fa-smoking-ban'></i> No se permite fumar"
+	}
+
+	let pets = ""
+	if (property.pets) {
+		pets = "<i class='fas fa-paw'></i> Mascotas permitidas"
+	} else {
+		pets = "<i class='fa-solid fa-ban'></i> No se permiten mascotas"
+	}
+
+	containerContent += `<div class="card">
+              <img
+                src=${property.src}
+                class="card-img-top"
+                alt="Imagen del departamento"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  ${property.nombre}
+                </h5>
+                <p class="card-text">
+                  ${property.descripcion}
+                </p>
+                <p>
+                  <i class="fas fa-map-marker-alt"></i>
+                  ${property.ubicacion}
+                </p>
+                <p>
+                  <i class="fas fa-bed"></i> ${property.habitaciones} Habitaciones |
+                  <i class="fas fa-bath"></i> ${property.bano} Baños
+                </p>
+                <p><i class="fas fa-dollar-sign"></i> ${property.costo}</p>
+                <p class="text-danger">
+                  ${smoke}
+                </p>
+                <p class="text-danger">
+                  ${pets}
+                </p>
+			  </div>
+			</div>`
+}
+
+containerSale.innerHTML = containerContent
