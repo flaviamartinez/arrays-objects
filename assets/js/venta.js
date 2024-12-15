@@ -56,24 +56,26 @@ let containerContent = ""
 for (const property of propertiesVenta) {
 	let smoke = ""
 	if (property.smoke) {
-		smoke = "<i class='fas fa-smoking'></i> Permitido fumar"
+		smoke = `<span style="color:green"><i class='fas fa-smoking'></i> Permitido fumar</span>`
 	} else {
-		smoke = "<i class='fas fa-smoking-ban'></i> No se permite fumar"
+		smoke = `<span style="color:red"><i class='fas fa-smoking-ban'></i> No se permite fumar</span>`
 	}
 
 	let pets = ""
 	if (property.pets) {
-		pets = "<i class='fas fa-paw'></i> Mascotas permitidas"
+		pets = `<span style="color:green"><i class='fas fa-paw'></i> Mascotas permitidas</span>`
 	} else {
-		pets = "<i class='fa-solid fa-ban'></i> No se permiten mascotas"
+		pets = `<span style="color:red"><i class='fa-solid fa-ban'></i> No se permiten mascotas</span>`
 	}
 
 	containerContent += `<div class="card">
-              <img
-                src=${property.src}
-                class="card-img-top"
-                alt="Imagen del departamento"
-              />
+			<div class = "card-img">
+				<img
+				src=${property.src}
+				class="card-img-top"
+				alt="Imagen del departamento"
+				/>
+			</div>
               <div class="card-body">
                 <h5 class="card-title">
                   ${property.nombre}
@@ -90,10 +92,10 @@ for (const property of propertiesVenta) {
                   <i class="fas fa-bath"></i> ${property.bano} Baños
                 </p>
                 <p><i class="fas fa-dollar-sign"></i> ${property.costo}</p>
-                <p class="text-danger">
+                <p class="text-danger" id="smoke-sign">
                   ${smoke}
                 </p>
-                <p class="text-danger">
+                <p class="text-danger" id="pets-sign">
                   ${pets}
                 </p>
 			  </div>
